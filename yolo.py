@@ -2,9 +2,9 @@ from ultralytics import YOLO
 import cv2
 
 model = YOLO('../yolo-weights/yolov8n.pt')
-results = model("images/img2.jpg",show = True)
+results = model("videos/bikes.mp4",show = True,stream=True)
 
-img = results[0].plot() 
-cv2.imshow("YOLOv8 Detection", img)
+for r in results:
+    pass
 
-cv2.waitKey(0)
+cv2.destroyAllWindows()
