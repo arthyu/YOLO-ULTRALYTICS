@@ -25,6 +25,7 @@ while True:
     success, img = cap.read()
     results = model(img, stream=True)
     for r in results:
+        print(r.boxes)
         boxes =r.boxes
         for box in boxes:
             #bounding box
